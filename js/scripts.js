@@ -1,5 +1,6 @@
+//add item button
 function newItem(){
-        let li = $('<ol class="list">(inputValue)</ol>');
+        let li = $('<li class="list"></li>');
         let inputValue = $('#input').val();
         li.append(inputValue);
 
@@ -9,8 +10,8 @@ function newItem(){
             $('#list').append(li);
         }
         //cross out item by double clicking
-        li.on('click', function(){
-            li.addClass('strike');
+        li.on('dblclick', function(){
+            li.toggleClass('strike');
         })
         //delete from List
         let crossOutButton = $('<crossOutButton></crossOutButton>');
@@ -21,3 +22,4 @@ function newItem(){
             li.addClass('delete')
         }
 }
+$('#list').sortable();
